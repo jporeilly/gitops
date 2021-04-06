@@ -1,14 +1,17 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: tekton-dashboard
   namespace: tekton-pipelines
 spec:
   rules:
-    - host: tekton-dev.fake
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: tekton-dashboard
-              servicePort: http
+  - host: "tekton-dev.fake"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tekton-dashboard
+            port:
+              name: http        
