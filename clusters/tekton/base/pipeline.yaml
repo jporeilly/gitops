@@ -15,7 +15,7 @@ spec:
       default: main
     - name: pathToContext
       description: The path to the build context, used by Kaniko - within the workspace
-      default: gitops-using-argo-cd-and-tekton
+      default: GitOps
     - name: imageUrl
       description: Image name including repository
     - name: serviceName

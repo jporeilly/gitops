@@ -24,8 +24,8 @@ spec:
         privileged: true
       script: |
         cd $(workspaces.source.path)
-        rm -rf gitops-using-argo-cd-and-tekton
+        rm -rf GitOps
         git clone -b "$(params.revision)" "$(params.url)"
-        cd gitops-using-argo-cd-and-tekton
+        cd GitOps
         RESULT_SHA="$(git rev-parse HEAD)"
         echo -n "$RESULT_SHA" > $(results.commit.path)
