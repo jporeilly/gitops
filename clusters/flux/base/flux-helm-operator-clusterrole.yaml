@@ -3,6 +3,7 @@ kind: ClusterRole
 metadata:
   name: flux-helm-operator
   namespace: flux
+
 rules:
   - apiGroups: ['*']
     resources: ['*']
